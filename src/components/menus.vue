@@ -1,0 +1,35 @@
+<template>
+  <div class="list-todos">  <!--菜单容器-->
+      <a class="list-todo activeListClass list" > <!--单个菜单容器-->
+        <span class="icon-lock" ></span>  <!--锁的图标-->
+        <span class="count-list">1</span><!--数字-->
+        星期一 <!--菜单内容-->
+      </a>
+    <a class=" link-list-new" > <!--新增菜单-->
+      <span class="icon-plus">
+      </span>
+      新增
+    </a>
+    <a class="list-todo list activeListClass" v-for="item in items"> <!-- v-for 列表渲染-->
+      <span class="icon-lock" v-if="item.locked"></span> <!-- v-if 条件渲染-->
+      <span class="count-list" v-if="item.count > 
+      0">{{item.count}}</span>
+      {{item.title}}   <!-- 数据绑定，看模板语法-->
+    </a>
+  </div>
+</template>
+
+<script>
+  export default {
+  data() { //data函数
+    return {
+      items: [{ title: '星期一', count: 1, locked: true }, //菜单的模拟数据
+        { title: '星期二', count: 2, locked: true }, {
+        title: '星期三', count: 3, locked: false
+      }]
+    };
+  }
+};
+</script>
+<style>
+</style>
