@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 示例</title>
+</head>
+<body>
+    <div id="app">
+        <span v-if="show">{{name}}</span>
+        <a v-bind:href="url">百度链接</a>
+        <img v-bind:src="imgUrl">
+        <hr>
+        <span v-if="show">邱其珍</span>
+        <button v-on:click="handleClose">点击隐藏</button>
+    </div>
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+    <script>
+        var app =new Vue({
+            el:'#app',
+            data: {
+                name:'Aries',
+                show: true,
+                url:"www.baidu.com",
+                imgUrl:"http://182.254.131.143/lingdeqing/index/tab_icon_home_pre@1X.png"
+            },
+            mounted: function () {
+                var _this = this;  //声明一个变量指向 Vue 实例 this ，保证作用域一致
+                this.timer= setInterval(function() {
+                 _this.date= new Date();  //修改数据 date
+                }, 1000);
+            },
+            beforeDestroy: function () {
+                if (this.timer) {
+                clearinterval(this.timer); //在 Vue 实例销毁前，清除我们的定时
+                }
+            },
+            methods: {
+                handleClose: function(){
+                    if(this.show){
+                        this.show = false;
+                    }else{
+                        this.show = true;
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

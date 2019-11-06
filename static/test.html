@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=” utf-8 ” >
+<title>Vue  <title>
+</head>
+<body>
+  <div id="s">
+
+      <li v-for="book in books">{{book.name}}</li>
+  </div>
+  <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+  <script>
+    new Vue({
+      el: '#s',
+      data: {
+        books:[
+          {name : 'vue 实战'},
+          {name : 'Docker 原理'}
+        ]
+      }
+    })
+  </script>
+</body>
+</html>

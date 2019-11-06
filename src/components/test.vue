@@ -1,17 +1,18 @@
 <template>
-<div>
-  <div class="s">
+
+  <div id="s">
     <ul>
-       <li >111</li>
-      <li v-for="book in books">{{books.name}}</li>
+      <li v-for="(item, index) in books" >{{item.name}}</li>
+       <!-- <tr v-for="(item, index) in books" > -->
     </ul>
   </div>
-  <br><br>
+
+  <!-- <br><br>
   <div id="ins">
     <input type="text" v-model="name" placeholder="姓名">
     <h1> hello，{{name}}</h1>
-  </div>
-</div>
+  </div> -->
+
 </template>
 <script>
 export default {
@@ -27,22 +28,22 @@ export default {
 }
 
 </script>
-<script>
-export default {
-  name: 'ins',
-  data () {
-    return{
-      name: ''
-    }
-  },
-  created: function(){
-    alert(this.name);
-    console.log(this.name);
-  },
-  mounted: function(){
-        alert(this.name);
+// <script>
+// export default {
+//   name: 'ins',
+//   data () {
+//     return{
+//       name: ''
+//     }
+//   },
+//   created: function(){
+//     // alert(this.name);
+//     console.log(this.name);
+//   },
+//   mounted: function(){
+//         // alert(this.name);
 
-     console.log(this.$name);
-  }
-}
-</script>
+//      console.log(this.$name);
+//   }
+// }
+// </script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Vue 示例</title>
+</head>
+<body>
+    <div id="app">
+        <span >{{reversedName}}</span>
+        {{reversedName2()}}
+    </div>
+    <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
+    <script>
+        var app =new Vue({
+            el:'#app',
+            data: {
+                name:'123,456'
+            },
+            computed:{
+                reversedName: function(){
+                    return this.name.split(',').reverse().join(',');
+                }
+            },
+            methods:{
+                reversedName2: function(){
+                    return this.name.split(',').reverse().join(',');
+                }
+            }
+        })
+    </script>
+</body>
+</html>
